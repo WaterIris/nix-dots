@@ -13,7 +13,7 @@
 ],
 
 "modules-center": [
-    "sway/workspaces"
+    "hyprland/workspaces"
 ],
 
 "modules-right": [
@@ -22,7 +22,7 @@
     "custom/power"
 ],
 
-"sway/workspaces": {
+"hyprland/workspaces": {
     "format": "{name}", 
     "on-click": "activate",
     "sort-by-number": true,
@@ -40,7 +40,7 @@
     },
 },
 
-"sway/window": {
+"hyprland/window": {
     "format": "󰣆 {title}",
     "max-length": 40,
     "separate-outputs": false,
