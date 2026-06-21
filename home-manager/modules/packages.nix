@@ -30,7 +30,6 @@ in
     grim
     btop
     lazygit
-    # television
     # Monitoring
     acpi
     usbutils
@@ -43,14 +42,11 @@ in
     nemo
     eog
     networkmanagerapplet
-    onlyoffice-desktopeditors
     wezterm
     kitty
     qbittorrent
     mpv
     calibre
-    # baobab
-    foliate
     # Wayland specific
     wl-clipboard
     hyprpicker
@@ -71,7 +67,5 @@ in
     luarocks
     nixfmt
     nil
-    pkgs-unstable.zed-editor
-
   ];
 }
