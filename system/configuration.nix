@@ -76,12 +76,8 @@
     "nix-command"
     "flakes"
   ];
-  # services.openssh.enable = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = [
-    inputs.home-manager.packages.${pkgs.system}.default
+    pkgs.home-manager
     pkgs.vim
     pkgs.wget
     pkgs.git
