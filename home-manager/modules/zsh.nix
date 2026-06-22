@@ -91,11 +91,6 @@
     };
   };
 
-  programs.zoxide = {
-    enable = true;
-    enableZshIntegration = true;
-  };
-
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
@@ -124,7 +119,6 @@
 
     shellAliases = {
       vi = "nvim";
-      cd = "z";
       ls = "eza --color=never";
       ll = "eza -alh";
       tree = "eza --tree";
