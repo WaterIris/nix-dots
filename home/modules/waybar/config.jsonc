@@ -1,0 +1,213 @@
+{
+"layer": "top",
+"position": "top",
+"fixed-center": true,
+"reload_style_on_change": true,
+"on-sigusr1":"toggle",
+"on-sigusr2":"reload",
+
+
+"modules-left": [
+    "clock",
+    "group/utils"
+],
+
+"modules-center": [
+    "hyprland/workspaces"
+],
+
+"modules-right": [
+    "group/stats",
+    "battery",
+    "custom/power"
+],
+
+"hyprland/workspaces": {
+    "format": "{name}", 
+    "on-click": "activate",
+    "sort-by-number": true,
+    "disable-scroll": true,
+    "all-outputs": true,
+	// "persistent-workspaces": {
+	//     "*": [ 1,2,3 ]
+	// },
+    "persistent-workspaces": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+    },
+},
+
+"hyprland/window": {
+    "format": "󰣆 {title}",
+    "max-length": 40,
+    "separate-outputs": false,
+    "rewrite": {
+      "(.*) — Mozilla Firefox": " Firefox",
+      "(.*) ": " Empty",
+	  "(.*)zsh(.*)": "󰄛 Kitty",
+	  "(.*)kitty(.*)": "󰄛 Kitty"
+    }
+},
+"group/utils": {
+    "orientation": "horizontal",
+    "drawer": {
+        "transition-duration": 500,
+        "children-class": "not-memory",
+        "transition-left-to-right": false,
+        "click-to-reveal": true
+    },
+    "modules": [
+    "custom/utils-icon",
+    "pulseaudio",
+    "backlight",
+    "bluetooth",
+    "network"
+    ]
+},
+"custom/utils-icon":{
+    "format": "",
+    "tooltip":false
+},
+
+
+"group/stats": {
+    "orientation": "horizontal",
+    "drawer": {
+        "transition-duration": 500,
+        "children-class": "not-memory",
+        "transition-left-to-right": true,
+        "click-to-reveal": true
+    },
+    "modules": [
+    "custom/stats-icon",
+    "cpu",
+    "memory",
+    "disk",
+    "temperature"
+    ]
+},
+"custom/stats-icon":{
+    "format": "󰄨",
+    "tooltip":false
+},
+
+"clock": {
+    "format": "󱑒 {:%H:%M}", 
+    "tooltip-format": "{:%A, %d %B %Y}",
+    "locale": "pl_PL.UTF-8",
+    "timezones": [ "Europe/Warsaw" ]
+},
+
+"cpu": {
+    "format": " {usage}%",
+    "interval": 2,
+    "tooltip-format": "CPU: {usage}%",
+    "states": {
+	"critical": 80
+    }
+},
+
+"memory": {
+    "format": " {percentage}%",
+    "interval": 2,
+    "tooltip-format": "Used: {used}GiB",
+    "states": {
+	"critical": 80
+    }
+},
+
+"disk": {
+    "format": "󰋊 {percentage_used}%",
+    "interval": 60,
+    "tooltip-format": "Used {used}({percentage_used}%)/{total}({percentage_free}%)",
+    "path": "/"
+},
+
+
+"pulseaudio": {
+    "format": "{icon} {volume}",
+    "format-muted": "󰖁 Mute",
+    "format-icons": ["", "", ""],
+    "tooltip-format": "Volume: {volume}%",
+    "smooth-scrolling-threshold": 1,
+    "on-click": "~/.config/waybar/scripts/pavucontrol.sh"
+},
+
+"backlight": {
+    "format": "{icon} {percent}",
+    "format-icons": ["󰃜", "󰃞", "󰃟", "󰃝", "󰃠"],
+    "tooltip-format": "Screen brightness: {percent}%"
+},
+
+"bluetooth": {
+	"format": "󰂯",
+	"format-connected": "󰂰",
+	"format-disabled": "󰂲", 
+	"tooltip-format": "Bluetooth enabled",
+	"tooltip-format-connected": "Connected to {device_alias}",
+	"on-click": "~/.config/waybar/scripts/blueman.sh"
+},
+
+"network": {
+    "interval": 1,
+    "format-wifi": "",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰖪",
+    "on-click": "~/.config/waybar/scripts/nmapplet.sh"
+},
+
+"temperature": {
+    "thermal-zone": 0,
+    "format": " {temperatureC}°C",
+    "critical-threshold": 80,
+    "format-critical": "󰈸 {temperatureC}°C",
+    "tooltip-format": "Temp: {temperatureC}°C"
+},
+
+"battery": {
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "interval": 5,
+    "tooltip-format": "{timeTo}\nHealth: {health}%",
+    "on-update": "~/.config/waybar/scripts/battery-alert.sh",
+    "states": {
+	"good": 75,
+        "warning": 30,
+        "critical": 20
+    }
+},
+
+"custom/power": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "~/.config/scripts/power-menu.sh"
+}
+
+
+
+// "pulseaudio": {
+//     "format": "{icon}\n{volume}%",
+//     "format-bluetooth": "󰂰\n{volume}",
+//     "format-icons": {
+// 	"headphone": "",
+// 	"hands-free": "",
+// 	"headset": "",
+// 	"phone": "",
+// 	"portable": "",
+// 	"car": "",
+// 	"default": [
+// 	    "", "", "󰕾",  ""
+// 	],
+// 	"ignored-sinks": [
+// 	    "Easy Effects Sink"
+// 	],
+//     },
+//     "scroll-step": 5.0,
+//     "tooltip-format": "{icon} {desc} | {volume}%",
+// },
+}

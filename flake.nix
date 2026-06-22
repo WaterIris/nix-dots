@@ -1,43 +1,50 @@
+
 {
-  description = "Basic nix config";
+  description = "My NixOS configuration with standalone Home Manager";
 
   inputs = {
-    # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
-    # Home manager
-    home-manager.url = "github:nix-community/home-manager/release-25.11";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    # Nixvim
-    # nixvim.url = "github:WaterIris/IrisNixvim";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs"; # keeps home-manager's nixpkgs in sync with yours
+    };
   };
 
-  outputs =
-    {
-      nixpkgs,
-      home-manager,
-      ...
-    }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+
+      # pkgs instance used ONLY for standalone home-manager (see homeConfigurations below).
+      # allowUnfree must be set HERE, at instantiation time — setting it inside
+      # home/default.nix is too late, since `pkgs` is already built by then.
+      pkgsWithUnfree = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
     in
     {
+      # ----------------------------------------------------------------
+      # SYSTEM CONFIGS — built with: sudo nixos-rebuild switch --flake .#<hostname>
+      # ----------------------------------------------------------------
       nixosConfigurations = {
-        alduin = nixpkgs.lib.nixosSystem {
+        laptop = nixpkgs.lib.nixosSystem {
+          inherit system;
           specialArgs = { inherit inputs; };
           modules = [
-            ./nixos/configuration.nix
+            ./system/configuration.nix
           ];
         };
       };
 
+      # ----------------------------------------------------------------
+      # HOME-MANAGER CONFIGS (standalone) — built with: home-manager switch --flake .#<user>@<hostname>
+      # ----------------------------------------------------------------
       homeConfigurations = {
-        "iris@alduin" = home-manager.lib.homeManagerConfiguration {
-          pkgs = pkgs; # Home-manager requires 'pkgs' instance
+        "iris@laptop" = home-manager.lib.homeManagerConfiguration {
+          pkgs = pkgsWithUnfree;
           extraSpecialArgs = { inherit inputs; };
           modules = [
-            ./home-manager/home.nix
+            ./home/home.nix
           ];
         };
       };
