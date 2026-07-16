@@ -2,9 +2,9 @@
   description = "My NixOS configuration with standalone Home Manager";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -36,7 +36,7 @@
           inherit system;
           specialArgs = { inherit inputs; };
           modules = [
-            ./system/laptop/configuration.nix
+            ./system/configuration.nix
           ];
         };
       };
@@ -49,7 +49,7 @@
           pkgs = pkgsWithUnfree;
           extraSpecialArgs = { inherit inputs; };
           modules = [
-            ./home/laptop
+            ./home
           ];
         };
       };

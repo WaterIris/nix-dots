@@ -4,7 +4,7 @@
     ./packages.nix
     ./kitty
     ./wallpapers
-    ./hypr
+    # ./hypr
     ./dunst
     ./waybar
     ./rofi
@@ -13,7 +13,7 @@
     ./scripts
     ./fonts
     ./git.nix
-    ./gtk.nix
+    # ./gtk.nix
     ./bash.nix
     ./zsh.nix
   ];
