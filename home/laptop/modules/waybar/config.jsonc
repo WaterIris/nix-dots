@@ -9,7 +9,10 @@
 
 "modules-left": [
     "clock",
-    "group/utils"
+    "pulseaudio",
+    "backlight",
+    "bluetooth",
+    "network",
 ],
 
 "modules-center": [
@@ -17,9 +20,12 @@
 ],
 
 "modules-right": [
-    "group/stats",
+    "cpu",
+    "memory",
+    "disk",
+    "temperature",
     "battery",
-    "custom/power"
+    "custom/power",
 ],
 
 "hyprland/workspaces": {
@@ -28,9 +34,6 @@
     "sort-by-number": true,
     "disable-scroll": true,
     "all-outputs": true,
-	// "persistent-workspaces": {
-	//     "*": [ 1,2,3 ]
-	// },
     "persistent-workspaces": {
         "1": [],
         "2": [],
@@ -50,48 +53,6 @@
 	  "(.*)zsh(.*)": "󰄛 Kitty",
 	  "(.*)kitty(.*)": "󰄛 Kitty"
     }
-},
-"group/utils": {
-    "orientation": "horizontal",
-    "drawer": {
-        "transition-duration": 500,
-        "children-class": "not-memory",
-        "transition-left-to-right": false,
-        "click-to-reveal": true
-    },
-    "modules": [
-    "custom/utils-icon",
-    "pulseaudio",
-    "backlight",
-    "bluetooth",
-    "network"
-    ]
-},
-"custom/utils-icon":{
-    "format": "",
-    "tooltip":false
-},
-
-
-"group/stats": {
-    "orientation": "horizontal",
-    "drawer": {
-        "transition-duration": 500,
-        "children-class": "not-memory",
-        "transition-left-to-right": true,
-        "click-to-reveal": true
-    },
-    "modules": [
-    "custom/stats-icon",
-    "cpu",
-    "memory",
-    "disk",
-    "temperature"
-    ]
-},
-"custom/stats-icon":{
-    "format": "󰄨",
-    "tooltip":false
 },
 
 "clock": {
@@ -115,7 +76,7 @@
     "interval": 2,
     "tooltip-format": "Used: {used}GiB",
     "states": {
-	"critical": 80
+	    "critical": 80
     }
 },
 
@@ -186,28 +147,5 @@
     "format": "",
     "tooltip": false,
     "on-click": "~/.config/scripts/power-menu.sh"
-}
-
-
-
-// "pulseaudio": {
-//     "format": "{icon}\n{volume}%",
-//     "format-bluetooth": "󰂰\n{volume}",
-//     "format-icons": {
-// 	"headphone": "",
-// 	"hands-free": "",
-// 	"headset": "",
-// 	"phone": "",
-// 	"portable": "",
-// 	"car": "",
-// 	"default": [
-// 	    "", "", "󰕾",  ""
-// 	],
-// 	"ignored-sinks": [
-// 	    "Easy Effects Sink"
-// 	],
-//     },
-//     "scroll-step": 5.0,
-//     "tooltip-format": "{icon} {desc} | {volume}%",
-// },
+},
 }

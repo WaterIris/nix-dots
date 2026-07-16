@@ -14,8 +14,8 @@
     source = ./hypridle.conf;
   };
 
-  home.file.".config/hypr/source" = {
-    source = ./source;
+  home.file.".config/hypr/conf.d" = {
+    source = ./conf.d;
     recursive = true;
   };
 

@@ -7,7 +7,7 @@
       add_newline = false;
       palette = "tokyonight_night";
       directory = {
-        truncation_length = 3;
+        truncation_length = 5;
         truncate_to_repo = false;
         style = "blue";
       };

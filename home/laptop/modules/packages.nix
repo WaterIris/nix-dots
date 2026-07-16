@@ -48,7 +48,6 @@
     hypridle
     hyprshot
     hyprlock
-    swayfx
     waybar
     #Other
     dunst
