@@ -1,39 +1,46 @@
-@define-color foreground #c0caf5;
-@define-color background #1a1b26;
+/* ===== Tokyo Night palette ===== */
+@define-color foreground      #c0caf5;
+@define-color foreground-dim  #a9b1d6;
+@define-color background      #1a1b26;
+@define-color surface         #16161e;
+@define-color surface-alt     #292e42;
+@define-color subtle          #565f89;
 
+@define-color red             #f7768e;
+@define-color red-surface     #2b1b26;
 
-@define-color subtle #545c7e;
-@define-color surface #15161e;
+@define-color orange          #ff9e64;
+@define-color yellow          #e0af68;
+@define-color green           #9ece6a;
+@define-color teal            #73daca;
+@define-color cyan            #7dcfff;
 
+@define-color blue            #7aa2f7;
+@define-color blue-surface    #1f2335;
 
-@define-color red #f7768e;
-@define-color red-surface #2F212F;
+@define-color magenta         #bb9af7;
+@define-color magenta-surface #2b2440;
 
-@define-color pine #7aa2f7;
-@define-color pine-surface #232539;
-
-@define-color yellow #e0af68;
-@define-color blue #7aa2f7;
-@define-color magenta #bb9af7;
-
+/* ===== Base ===== */
 * {
-  all:unset;
-  font-family: "JetBrainsMono Nerd Font Propo";
-  font-size: 18px;
-  font-weight: bold;
-  border: none;
-  border-radius: 0px;
-  box-shadow: none;
-  text-shadow: none;
+    all: unset;
+    font-family: "JetBrainsMono Nerd Font Propo";
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+    text-shadow: none;
 }
 
 window#waybar {
-  color: @foreground;
-  background: @surface;
+    color: @foreground;
+    background: @surface;
 }
 
+/* ===== Tooltips ===== */
 tooltip {
-    border-radius: 10px;
+    border-radius: 8px;
     color: @foreground;
     background: @background;
 }
@@ -42,29 +49,27 @@ tooltip label {
     color: @foreground;
 }
 
-#workspaces {
-  /* margin: 0px 10px; */
-  /* border-radius: 8px; */
-}
-/* Workspaces */
+/* ===== Workspaces ===== */
 #workspaces button {
-    border-radius: 10px;
-    margin: 6px 3px;
-    padding: 4px 12px;
+    border-radius: 8px;
+    margin: 3px 3px;
+    padding: 3px 12px;
+    min-width: 10px;
     color: @subtle;
     background: @background;
-    border-color: @background;
-    border-style: solid;
-    /* border-radius: 8px; */
-    transition: all 0.2s ease;
+    border: 1px solid @background;
+    transition: min-width 0.2s ease, color 0.2s ease, background 0.2s ease;
 }
 
-#workspaces button.active {
-    color: @blue;
+#workspaces button:hover {
+    color: @foreground;
 }
 
+#workspaces button.active,
 #workspaces button.focused {
-    color: @blue;
+    min-width: 26px;
+    color: @surface;
+    background: @blue;
 }
 
 #workspaces button.empty:not(.focused):not(.active) {
@@ -72,14 +77,15 @@ tooltip label {
 }
 
 #workspaces button.empty.active {
-    color: @red;
+    color: @surface;
+    background: @red;
 }
-/* Clock */
 
+/* ===== Standard modules ===== */
 #window,
 #clock,
-#memory, 
-#cpu, 
+#memory,
+#cpu,
 #disk,
 #custom-power,
 #pulseaudio,
@@ -89,26 +95,41 @@ tooltip label {
 #bluetooth,
 #custom-utils-icon,
 #custom-stats-icon,
-#backlight{
-    border-radius: 10px;
-    margin: 6px 6px;
-    padding: 4px 6px;
+#backlight {
+    border-radius: 8px;
+    margin: 3px 5px;
+    padding: 3px 8px;
     color: @subtle;
     background: @background;
 }
 
-#clock{
-    border-radius: 10px;
-    margin: 6px 6px;
-    padding: 4px 6px;
+/* ===== Accented modules ===== */
+#clock {
     color: @red;
     background: @red-surface;
 }
 
-#custom-power{
-    border-radius: 10px;
-    margin: 6px 6px;
-    padding: 4px 6px;
-    color: @pine;
-    background: @pine-surface;
+#pulseaudio {
+    color: @cyan;
+    background: @blue-surface;
+}
+
+#network {
+    color: @green;
+    background: @blue-surface;
+}
+
+#battery {
+    color: @yellow;
+    background: @blue-surface;
+}
+
+#battery.critical:not(.charging) {
+    color: @red;
+    background: @red-surface;
+}
+
+#custom-power {
+    color: @magenta;
+    background: @magenta-surface;
 }

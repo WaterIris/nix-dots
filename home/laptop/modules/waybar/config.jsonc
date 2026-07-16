@@ -1,3 +1,4 @@
+
 {
 "layer": "top",
 "position": "top",
@@ -65,7 +66,7 @@
 "cpu": {
     "format": " {usage}%",
     "interval": 2,
-    "tooltip-format": "CPU: {usage}%",
+    "tooltip-format": "CPU usage: {usage}%\nLoad average: {load}",
     "states": {
 	"critical": 80
     }
@@ -74,7 +75,7 @@
 "memory": {
     "format": " {percentage}%",
     "interval": 2,
-    "tooltip-format": "Used: {used}GiB",
+    "tooltip-format": "Used: {used} / {total} GiB\nAvailable: {avail} GiB\nSwap: {swapUsed} / {swapTotal} GiB",
     "states": {
 	    "critical": 80
     }
@@ -83,7 +84,7 @@
 "disk": {
     "format": "󰋊 {percentage_used}%",
     "interval": 60,
-    "tooltip-format": "Used {used}({percentage_used}%)/{total}({percentage_free}%)",
+    "tooltip-format": "Path: {path}\nUsed: {used} ({percentage_used}%)\nFree: {free} ({percentage_free}%)\nTotal: {total}",
     "path": "/"
 },
 
@@ -92,7 +93,7 @@
     "format": "{icon} {volume}",
     "format-muted": "󰖁 Mute",
     "format-icons": ["", "", ""],
-    "tooltip-format": "Volume: {volume}%",
+    "tooltip-format": "{desc}\nVolume: {volume}%",
     "smooth-scrolling-threshold": 1,
     "on-click": "~/.config/waybar/scripts/pavucontrol.sh"
 },
@@ -107,8 +108,9 @@
 	"format": "󰂯",
 	"format-connected": "󰂰",
 	"format-disabled": "󰂲", 
-	"tooltip-format": "Bluetooth enabled",
-	"tooltip-format-connected": "Connected to {device_alias}",
+	"tooltip-format": "Bluetooth on\nNo devices connected",
+	"tooltip-format-connected": "Bluetooth on\nConnected: {device_alias}\n{num_connections} device(s) connected",
+	"tooltip-format-disabled": "Bluetooth disabled",
 	"on-click": "~/.config/waybar/scripts/blueman.sh"
 },
 
@@ -117,6 +119,9 @@
     "format-wifi": "",
     "format-ethernet": "󰈀",
     "format-disconnected": "󰖪",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)\n {bandwidthUpBits}   {bandwidthDownBits}\nIP: {ipaddr}/{cidr}",
+    "tooltip-format-ethernet": "Interface: {ifname}\nIP: {ipaddr}/{cidr}\nGateway: {gwaddr}",
+    "tooltip-format-disconnected": "Disconnected",
     "on-click": "~/.config/waybar/scripts/nmapplet.sh"
 },
 
@@ -125,7 +130,7 @@
     "format": " {temperatureC}°C",
     "critical-threshold": 80,
     "format-critical": "󰈸 {temperatureC}°C",
-    "tooltip-format": "Temp: {temperatureC}°C"
+    "tooltip-format": "Temperature: {temperatureC}°C\nCritical at 80°C",
 },
 
 "battery": {
@@ -134,7 +139,7 @@
     "format-plugged": " {capacity}%",
     "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "interval": 5,
-    "tooltip-format": "{timeTo}\nHealth: {health}%",
+    "tooltip-format": "{timeTo}\nCapacity: {capacity}%\nHealth: {health}%\nPower draw: {power}W",
     "on-update": "~/.config/waybar/scripts/battery-alert.sh",
     "states": {
 	"good": 75,
