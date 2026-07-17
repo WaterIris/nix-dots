@@ -3,17 +3,12 @@
 {
   services = {
     xserver = {
-      # enable = true;
       videoDrivers = [ "nvidia" ];
       xkb = {
         layout = "pl";
         variant = "";
       };
     };
-    # displayManager = {
-    #   sddm.enable = true;
-    #   defaultSession = "hyprland";
-    # };
   };
 
   hardware.graphics = {
@@ -27,7 +22,8 @@
     powerManagement = {
       enable = true;
     };
-    open = false;
+    open = true;  # changed from false — required/recommended for your Ada Lovelace (RTX 4070)
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
   boot.kernelParams = [ "pcie_aspm=off" ];
 }

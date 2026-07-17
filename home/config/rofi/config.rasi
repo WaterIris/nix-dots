@@ -1,0 +1,186 @@
+* {
+    /* Tokyo Night palette — matches waybar style.css */
+    foreground: #c0caf5;
+    foreground-dim: #a9b1d6;
+    background: #1a1b26;
+    surface: #16161e;
+    surface-alt: #292e42;
+    subtle: #565f89;
+
+    red: #f7768e;
+    red-surface: #2b1b26;
+
+    orange: #ff9e64;
+    yellow: #e0af68;
+    green: #9ece6a;
+    teal: #73daca;
+    cyan: #7dcfff;
+
+    blue: #7aa2f7;
+    blue-surface: #1f2335;
+
+    magenta: #bb9af7;
+    magenta-surface: #2b2440;
+
+    border-color: #191724;
+}
+
+
+configuration {
+    modes: "drun";
+    font: "JetBrainsMono Nerd Font Propo Bold 15";
+    fixed-num-lines: true;
+    show-icons: false;
+    sidebar-mode: false;
+    scroll-method: 1;
+    window-format: "{t:50} ·· {c}";
+    click-to-exit: true;
+    matching: "fuzzy";
+    sort: true;
+    sorting-method: "levenshtein";
+    combi-hide-mode-prefix: false;
+    display-drun: "";
+    drun-display-format: "{name}";
+}
+
+window {
+    background-color: @surface;
+    text-color: @foreground;
+    border: 2px;
+    border-color: @border-color;
+    padding: 0px;
+    border-radius: 10px;
+    width: 400px;
+    height: 328px;
+}
+// Almost the same thing as window idk
+mainbox {
+    border: 0;
+    padding: 0px;
+}
+
+inputbar {
+    background-color: @surface;
+    spacing: 0px;
+    padding: 10px 10px 10px 10px;
+    children: [prompt, textbox-prompt-colon, entry];
+}
+
+prompt {
+    spacing:    0;
+    border:     0;
+    text-color: @blue;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: " ";
+    text-color: @blue;
+}
+
+entry {
+    spacing:    0;
+    text-color: @foreground;
+    placeholder: "";
+}
+
+// Cant find ...
+message {
+    border: 0px;
+    padding: 6px 30px;
+
+    background-color: @red-surface;
+    text-color: @red;
+}
+// After using rofi -e "string"
+textbox {
+    background-color: @blue-surface;
+    text-color: @blue;
+}
+// List of items
+// border-color invisible to me
+listview {
+    spacing: 0px;
+    fixed-height: 0px;
+    border: 0px;
+    border-color: @blue;
+    scrollbar: false;
+    columns: 1;
+
+}
+// List entries
+element {
+    border: 0;
+    border-radius: 8px;
+    padding: 8px 8px;
+}
+//
+element normal.normal {
+    background-color: @surface;
+    text-color: @subtle;
+}
+
+element alternate.normal {
+    background-color: @surface;
+    text-color: @subtle;
+}
+
+
+element selected.normal {
+    background-color: @blue-surface;
+    text-color:       @blue;
+}
+
+// element normal.urgent {
+//     background-color: rgba (0,0,0,0%);
+//     text-color:       @x1;
+// }
+// element normal.active {
+//     background-color: rgba (0,0,0,0%);
+//     text-color:       @x5;
+// }
+// element selected.urgent {
+//     background-color: @x0;
+//     text-color:       @x4;
+// }
+// element selected.active {
+//     background-color: @x0;
+//     text-color:       @x4;
+// }
+// element alternate.urgent {
+//     background-color: rgba (0,0,0,0%);
+//     text-color:       @x1;
+// }
+// element alternate.active {
+//     background-color: rgba (0,0,0,0%);
+//     text-color:       @x5;
+// }
+// scrollbar {
+//     width:        4px ;
+//     border:       0;
+//     handle-color: @xfg;
+//     handle-width: 8px ;
+//     padding:      0;
+// }
+// sidebar {
+//     border: 0px;
+//     border-color: @yellow;
+//     border-radius: 20px;
+// }
+// button {
+//   font: "JetBrainsMono Nerd Font Propo Bold 15";
+//   background-color: @x0;
+//   text-color: @yellow;
+//   border: 0px;
+//   border-color: @x8;
+//
+//   border-radius: 0px;
+//   margin: 0;
+//   padding: 18px;
+// }
+// button selected {
+//     background-color: @x0;
+//     text-color: @x7;
+//     border: 0px;
+//     border-color: @x7;
+// }

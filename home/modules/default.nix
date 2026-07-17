@@ -7,13 +7,14 @@
     # ./hypr
     ./dunst
     ./waybar
-    ./rofi
+    # ./rofi
     ./tmux
     ./mpv
     ./scripts
     ./fonts
     ./git.nix
     # ./gtk.nix
+    ./gtk-tony.nix
     ./bash.nix
     ./zsh.nix
   ];

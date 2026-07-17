@@ -41,6 +41,7 @@
     calibre
     vscode-fhs
     gnome-disk-utility
+    alacritty
     # Wayland specific
     wl-clipboard
     hyprpicker
