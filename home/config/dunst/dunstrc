@@ -14,14 +14,14 @@
     # width = 400
 
     # The maximum height of a single notification, excluding the frame.
-    height = 120
+    height = (0, 120)
 
     gap_size = 8
-    # Position the notification in the top right corner
-    origin = top-right
+    # Position the notification in the bottom right corner
+    origin = bottom-right
 
     # Offset from the origin
-    offset = 30x80
+    offset = (24, 24)
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -96,7 +96,7 @@
 
     ### Text ###
 
-    font = JetBrainsMono Nerd Font Bold 14
+    font = JetBrainsMono Nerd Font Propo Bold 15
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -163,13 +163,18 @@
     hide_duplicate_count = false
 
     # Display indicators for URLs (U) and actions (A).
-    show_indicators = false
+    show_indicators = true
 
     ### Icons ###
-    # icon_theme = Papirus-Dark
-    show_icons = True
-    # Align icons left/right/off
+    icon_theme = Papirus-Dark
+    # Align icons left/right/off (set to 'off' to disable icons entirely)
     icon_position = left
+
+    # Look up icons in additional directories recursively (finds more app icons)
+    enable_recursive_icon_lookup = true
+
+    # Round the corners of notification icons to match the notification card
+    icon_corner_radius = 6
 
     # Scale small icons up to this size, set to 0 to disable. Helpful
     # for e.g. small files or high-dpi screens. In case of conflict,
@@ -214,7 +219,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 8
+    corner_radius = 10
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this
@@ -256,19 +261,19 @@
 
 
 [urgency_low]
-    background = "#1a1b26"
-    foreground = "#c0caf5"
-    frame_color = "#c0caf5"
+    background = "#16161e"
+    foreground = "#565f89"
+    frame_color = "#565f89"
     timeout = 3
 
 [urgency_normal]
-    background = "#1a1b26"
+    background = "#1f2335"
     foreground = "#7aa2f7"
     frame_color = "#7aa2f7"
     timeout = 8
 
 [urgency_critical]
-    background = "#1a1b26"
+    background = "#2b1b26"
     foreground = "#f7768e"
     frame_color = "#f7768e"
     timeout = 0

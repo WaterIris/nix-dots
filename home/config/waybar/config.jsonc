@@ -51,8 +51,6 @@
     "rewrite": {
       "(.*) — Mozilla Firefox": " Firefox",
       "(.*) ": " Empty",
-	  "(.*)zsh(.*)": "󰄛 Kitty",
-	  "(.*)kitty(.*)": "󰄛 Kitty"
     }
 },
 
@@ -95,7 +93,6 @@
     "format-icons": ["", "", ""],
     "tooltip-format": "{desc}\nVolume: {volume}%",
     "smooth-scrolling-threshold": 1,
-    "on-click": "~/.config/waybar/scripts/pavucontrol.sh"
 },
 
 "backlight": {
@@ -111,7 +108,6 @@
 	"tooltip-format": "Bluetooth on\nNo devices connected",
 	"tooltip-format-connected": "Bluetooth on\nConnected: {device_alias}\n{num_connections} device(s) connected",
 	"tooltip-format-disabled": "Bluetooth disabled",
-	"on-click": "~/.config/waybar/scripts/blueman.sh"
 },
 
 "network": {
@@ -122,7 +118,6 @@
     "tooltip-format-wifi": "{essid} ({signalStrength}%)\n {bandwidthUpBits}   {bandwidthDownBits}\nIP: {ipaddr}/{cidr}",
     "tooltip-format-ethernet": "Interface: {ifname}\nIP: {ipaddr}/{cidr}\nGateway: {gwaddr}",
     "tooltip-format-disconnected": "Disconnected",
-    "on-click": "~/.config/waybar/scripts/nmapplet.sh"
 },
 
 "temperature": {
