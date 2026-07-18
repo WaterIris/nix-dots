@@ -19,6 +19,12 @@
         force = true;
     };
 
+    home.file.".config/quickshell" = {
+        source = ./config/quickshell;
+        recursive = true;
+        force = true;
+    };
+
     home.file.".config/alacritty" = {
         source = ./config/alacritty;
         recursive = true;

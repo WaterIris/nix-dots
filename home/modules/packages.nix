@@ -42,6 +42,7 @@
     vscode-fhs
     gnome-disk-utility
     alacritty
+    quickshell
     # Wayland specific
     wl-clipboard
     hyprpicker
@@ -59,7 +60,5 @@
     tree-sitter
     clang
     luarocks
-    nixfmt
-    nil
   ];
 }

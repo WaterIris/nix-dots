@@ -25,12 +25,13 @@
 * {
     all: unset;
     font-family: "JetBrainsMono Nerd Font Propo";
-    font-size: 15px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 600;
     border: none;
     border-radius: 0px;
     box-shadow: none;
     text-shadow: none;
+    -gtk-icon-shadow: none;
 }
 
 window#waybar {
