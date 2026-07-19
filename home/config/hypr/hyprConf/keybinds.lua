@@ -8,6 +8,7 @@ local fileManager = "dolphin"
 local menu        = "rofi -show drun"
 local browser     = "firefox"
 local powermenu   = "qs -p ~/.config/quickshell/powermenu.qml"
+local audiomenu   = "qs -p ~/.config/quickshell/audiocontrol.qml"
 
 ---------------------
 ---- KEYBINDINGS ----
@@ -17,6 +18,7 @@ local mainMod     = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Private binds
 hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd(powermenu))
+hl.bind("SUPER + A", hl.dsp.exec_cmd(audiomenu))
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
