@@ -68,18 +68,13 @@ tooltip label {
 
 #workspaces button.active,
 #workspaces button.focused {
-    min-width: 26px;
+    min-width: 32px;
     color: @surface;
     background: @blue;
 }
 
 #workspaces button.empty:not(.focused):not(.active) {
     color: transparent;
-}
-
-#workspaces button.empty.active {
-    color: @surface;
-    background: @red;
 }
 
 /* ===== Standard modules ===== */

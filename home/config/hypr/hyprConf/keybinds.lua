@@ -3,22 +3,33 @@
 ---------------------
 
 -- Set programs that you use
-local terminal    = "alacritty"
-local fileManager = "dolphin"
-local menu        = "rofi -show drun"
-local browser     = "firefox"
-local powermenu   = "qs -p ~/.config/quickshell/powermenu.qml"
-local audiomenu   = "qs -p ~/.config/quickshell/audiocontrol.qml"
+local terminal      = "alacritty"
+local fileManager   = "dolphin"
+local menu          = "rofi -show drun"
+local browser       = "firefox"
+local powermenu     = "qs -p ~/.config/quickshell/powermenu.qml"
+local audiomenu     = "qs -p ~/.config/quickshell/audiocontrol.qml"
+local bluetoothmenu = "qs -p ~/.config/quickshell/bluetoothcontrol.qml"
 
 ---------------------
 ---- KEYBINDINGS ----
 ---------------------
 
-local mainMod     = "SUPER" -- Sets "Windows" key as main modifier
+local mainMod       = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Private binds
 hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd(powermenu))
-hl.bind("SUPER + A", hl.dsp.exec_cmd(audiomenu))
+hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(audiomenu))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(bluetoothmenu))
+
+-- Swap the focused window with its neighbor (vim-style: l = horizontal/right, k = vertical/up)
+hl.bind(mainMod .. " + CTRL + L", hl.dsp.window.swap({ direction = "right" }))
+hl.bind(mainMod .. " + CTRL + H", hl.dsp.window.swap({ direction = "left" }))
+hl.bind(mainMod .. " + CTRL + K", hl.dsp.window.swap({ direction = "up" }))
+hl.bind(mainMod .. " + CTRL + J", hl.dsp.window.swap({ direction = "down" }))
+
+-- Rotate the current split from side-by-side to stacked (top/bottom) and back
+hl.bind(mainMod .. " + CTRL + R", hl.dsp.layout("togglesplit"))
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
@@ -31,7 +42,6 @@ hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))

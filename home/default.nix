@@ -37,6 +37,11 @@
         force = true;
     };
 
+    home.file.".config/tmux" = {
+        source = ./config/tmux;
+        force = true;
+    };
+
     home.file.".config/dunst" = {
         source = ./config/dunst;
         force = true;

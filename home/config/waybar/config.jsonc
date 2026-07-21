@@ -112,10 +112,10 @@
 
 "network": {
     "interval": 1,
-    "format-wifi": "",
+    "format-wifi": "  {signalStrength}%",
     "format-ethernet": "󰈀",
     "format-disconnected": "󰖪",
-    "tooltip-format-wifi": "{essid} ({signalStrength}%)\n {bandwidthUpBits}   {bandwidthDownBits}\nIP: {ipaddr}/{cidr}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{bandwidthUpBits}   {bandwidthDownBits}\nIP: {ipaddr}/{cidr}\n Freq: {frequency}GHz",
     "tooltip-format-ethernet": "Interface: {ifname}\nIP: {ipaddr}/{cidr}\nGateway: {gwaddr}",
     "tooltip-format-disconnected": "Disconnected",
 },

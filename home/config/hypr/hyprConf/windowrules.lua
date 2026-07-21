@@ -1,49 +1,54 @@
---------------------------------
----- WINDOWS AND WORKSPACES ----
---------------------------------
+-- ~/.config/hypr/workspace-monitor-assign.lua
+--
+-- Keeps workspaces 1 and 2 bound to HDMI-A-1 whenever it's connected,
+-- falling back to eDP-1 otherwise. Workspace 3 onward are explicitly
+-- pinned to the fallback monitor (eDP-1) — left unset, Hyprland's own
+-- auto-assignment will grab the next free workspace number for whichever
+-- monitor doesn't have one of the pinned workspaces, which is exactly
+-- what was landing workspace 3 on HDMI-A-1.
+--
+-- Fully native — no external scripts, jq, or socat needed. Re-evaluates
+-- automatically whenever a monitor is plugged or unplugged via Hyprland's
+-- own Lua event hooks.
 
--- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
--- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
+local PINNED_WORKSPACES = { "1", "2" }
+local PREFERRED = "HDMI-A-1"
+local FALLBACK = "eDP-1"
 
--- Example window rules that are useful
+-- "The rest" — adjust the range if you use more than 10 workspaces.
+local REST_WORKSPACES = { "3", "4", "5", "6", "7", "8", "9", "10" }
 
-local suppressMaximizeRule = hl.window_rule({
-    -- Ignore maximize requests from all apps. You'll probably like this.
-    name           = "suppress-maximize-events",
-    match          = { class = ".*" },
+local function pick_target()
+    for _, m in ipairs(hl.get_monitors()) do
+        if m.name == PREFERRED then
+            return PREFERRED
+        end
+    end
+    return FALLBACK
+end
 
-    suppress_event = "maximize",
-})
--- suppressMaximizeRule:set_enabled(false)
+local function assign()
+    local target = pick_target()
 
-hl.window_rule({
-    -- Fix some dragging issues with XWayland
-    name     = "fix-xwayland-drags",
-    match    = {
-        class      = "^$",
-        title      = "^$",
-        xwayland   = true,
-        float      = true,
-        fullscreen = false,
-        pin        = false,
-    },
+    -- Workspaces 1-2: bound to whichever monitor is currently preferred.
+    hl.workspace_rule({ workspace = PINNED_WORKSPACES[1], monitor = target, default = true })
+    hl.workspace_rule({ workspace = PINNED_WORKSPACES[2], monitor = target })
 
-    no_focus = true,
-})
+    for _, ws in ipairs(PINNED_WORKSPACES) do
+        hl.dispatch(hl.dsp.workspace.move({ workspace = tonumber(ws), monitor = target }))
+    end
 
--- Layer rules also return a handle.
--- local overlayLayerRule = hl.layer_rule({
---     name  = "no-anim-overlay",
---     match = { namespace = "^my-overlay$" },
---     no_anim = true,
--- })
--- overlayLayerRule:set_enabled(false)
+    -- Everything else: always pinned to the fallback monitor, so it never
+    -- ends up on HDMI-A-1 just because HDMI-A-1 needed *some* default
+    -- workspace of its own.
+    for _, ws in ipairs(REST_WORKSPACES) do
+        hl.workspace_rule({ workspace = ws, monitor = FALLBACK })
+    end
+end
 
--- Hyprland-run windowrule
-hl.window_rule({
-    name  = "move-hyprland-run",
-    match = { class = "hyprland-run" },
+-- Run once at config load...
+assign()
 
-    move  = "20 monitor_h-120",
-    float = true,
-})
+-- ...and again every time a monitor is connected or disconnected.
+hl.on("monitor.added", assign)
+hl.on("monitor.removed", assign)

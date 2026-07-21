@@ -30,6 +30,6 @@ hl.gesture({
 hl.device({
     name           = "logitech-g-pro--1",
     sensitivity    = 0,
+    accel_profile  = "flat",
     natural_scroll = true
-
 })
