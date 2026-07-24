@@ -8,7 +8,6 @@
     ripgrep # better grep
     fd # better find
     brightnessctl
-    discord
     zip
     unzip
     fastfetch
@@ -16,12 +15,9 @@
     udiskie
     libmtp
     file
-    epubcheck
-    tesseract
     slurp
     grim
     btop
-    lazygit
     # Monitoring
     acpi
     usbutils
@@ -33,7 +29,7 @@
     obsidian
     nemo
     eog
-    networkmanagerapplet
+    # networkmanagerapplet
     wezterm
     kitty
     qbittorrent

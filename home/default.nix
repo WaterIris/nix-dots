@@ -47,6 +47,17 @@
         force = true;
     };
 
+    home.file.".config/mpv" = {
+        source = ./config/mpv;
+        force = true;
+    };
+
+    home.file.".config/wallpapers" = {
+        source = ./config/wallpapers;
+        recursive = true;
+        force = true;
+    };
+
     programs.home-manager.enable = true;
     systemd.user.startServices = "sd-switch";
     home.stateVersion = "25.11";
