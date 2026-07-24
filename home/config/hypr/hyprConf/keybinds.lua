@@ -10,6 +10,7 @@ local browser       = "firefox"
 local powermenu     = "qs -p ~/.config/quickshell/powermenu.qml"
 local audiomenu     = "qs -p ~/.config/quickshell/audiocontrol.qml"
 local bluetoothmenu = "qs -p ~/.config/quickshell/bluetoothcontrol.qml"
+local wifimenu      = "qs -p ~/.config/quickshell/wificontrol.qml"
 
 ---------------------
 ---- KEYBINDINGS ----
@@ -21,6 +22,7 @@ local mainMod       = "SUPER" -- Sets "Windows" key as main modifier
 hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd(powermenu))
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(audiomenu))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(bluetoothmenu))
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(wifimenu))
 
 -- Swap the focused window with its neighbor (vim-style: l = horizontal/right, k = vertical/up)
 hl.bind(mainMod .. " + CTRL + L", hl.dsp.window.swap({ direction = "right" }))
