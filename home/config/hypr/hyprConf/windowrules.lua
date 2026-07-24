@@ -28,3 +28,9 @@ hl.window_rule({
 
     no_focus = true,
 })
+hl.window_rule({
+    name  = "fullscreen-full-opacity",
+    match = { fullscreen = true },
+
+    opacity = "1.0",
+})

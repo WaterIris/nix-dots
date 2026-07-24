@@ -23,6 +23,7 @@ hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd(powermenu))
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(audiomenu))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(bluetoothmenu))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(wifimenu))
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 
 -- Swap the focused window with its neighbor (vim-style: l = horizontal/right, k = vertical/up)
 hl.bind(mainMod .. " + CTRL + L", hl.dsp.window.swap({ direction = "right" }))
