@@ -12,6 +12,7 @@
     ./modules/networking.nix
     ./modules/nix-ld.nix
     ./modules/services.nix
+    ./modules/steam.nix
   ];
   users.users.iris = {
     isNormalUser = true;

@@ -14,6 +14,7 @@
     "backlight",
     "bluetooth",
     "network",
+    "tray",
 ],
 
 "modules-center": [
@@ -21,27 +22,22 @@
 ],
 
 "modules-right": [
+    "disk",
     "cpu",
     "memory",
-    "disk",
     "temperature",
     "battery",
     "custom/power",
 ],
 
 "hyprland/workspaces": {
-    "format": "{name}", 
+    "format": "{name}",
     "on-click": "activate",
-    "sort-by-number": true,
     "disable-scroll": true,
     "all-outputs": true,
     "persistent-workspaces": {
-        "1": [],
-        "2": [],
-        "3": [],
-        "4": [],
-        "5": [],
-    },
+        "*": [1, 2, 3, 4, 5]
+    }
 },
 
 "hyprland/window": {
@@ -52,6 +48,11 @@
       "(.*) — Mozilla Firefox": " Firefox",
       "(.*) ": " Empty",
     }
+},
+
+"tray": {
+	"icon-size": 21,
+	"spacing": 10,
 },
 
 "clock": {
@@ -112,7 +113,7 @@
 
 "network": {
     "interval": 1,
-    "format-wifi": "  {signalStrength}%",
+    "format-wifi": " {signalStrength}%",
     "format-ethernet": "󰈀",
     "format-disconnected": "󰖪",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{bandwidthUpBits}   {bandwidthDownBits}\nIP: {ipaddr}/{cidr}\n Freq: {frequency}GHz",
