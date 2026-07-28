@@ -25,10 +25,4 @@
         open = true;  # changed from false — required/recommended for your Ada Lovelace (RTX 4070)
             package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
-
-    boot.kernelParams = [
-        "nvidia-drm.modeset=1"
-            "amd_pstate=active"
-            "pcie_aspm=off"
-    ];
 }
