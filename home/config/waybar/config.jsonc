@@ -1,7 +1,7 @@
 
 {
 "layer": "top",
-"position": "bottom",
+"position": "top",
 "fixed-center": true,
 "reload_style_on_change": true,
 "on-sigusr1":"toggle",
@@ -14,7 +14,6 @@
     "backlight",
     "bluetooth",
     "network",
-    "tray",
 ],
 
 "modules-center": [
