@@ -46,7 +46,7 @@ PanelWindow {
         id: instanceGuard
         running: true
         command: ["sh", "-c",
-            "others=$(pgrep -f 'audiocontrol\\.qml' | grep -v \"^$PPID$\"); " +
+            "others=$(pgrep -f 'quickshell -p .*audiocontrol\\.qml' | grep -v \"^$PPID$\"); " +
             "if [ -n \"$others\" ]; then kill $others 2>/dev/null; echo CLOSED; else echo OK; fi"]
         stdout: SplitParser {
             onRead: data => {
