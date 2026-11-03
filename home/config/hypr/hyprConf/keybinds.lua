@@ -63,13 +63,12 @@ hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }), { descript
 hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }), { description = "Focus: Up" })
 hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }), { description = "Focus: Down" })
 
--- Switch workspaces with mainMod + [0-9]
--- Move active window to a workspace with mainMod + SHIFT + [0-9]
-for i = 1, 6 do
-    local key = i % 6 -- 10 maps to key 0
-    hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }),
+-- Switch workspaces with mainMod + [1-5]
+-- Move active window to a workspace with mainMod + SHIFT + [1-5]
+for i = 1, 5 do
+    hl.bind(mainMod .. " + " .. i, hl.dsp.focus({ workspace = i }),
         { description = "Workspaces: Go to workspace " .. i })
-    hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }),
+    hl.bind(mainMod .. " + SHIFT + " .. i, hl.dsp.window.move({ workspace = i }),
         { description = "Workspaces: Move window to workspace " .. i })
 end
 
