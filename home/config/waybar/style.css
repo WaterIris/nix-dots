@@ -83,7 +83,6 @@ tooltip label {
 #memory,
 #cpu,
 #disk,
-#custom-power,
 #pulseaudio,
 #network,
 #temperature,
@@ -118,9 +117,4 @@ tooltip label {
 #battery.critical:not(.charging) {
     color: @red;
     background: @red-surface;
-}
-
-#custom-power {
-    color: @magenta;
-    background: @magenta-surface;
 }

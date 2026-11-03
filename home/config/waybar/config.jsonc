@@ -26,7 +26,6 @@
     "memory",
     "temperature",
     "battery",
-    "custom/power",
 ],
 
 "hyprland/workspaces": {
@@ -141,11 +140,5 @@
         "warning": 30,
         "critical": 20
     }
-},
-
-"custom/power": {
-    "format": "",
-    "tooltip": false,
-    "on-click": "~/.config/scripts/power-menu.sh"
 },
 }
