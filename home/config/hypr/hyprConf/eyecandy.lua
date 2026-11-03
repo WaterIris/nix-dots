@@ -6,7 +6,7 @@ hl.config({
     general = {
         gaps_in          = 4,
         gaps_out         = 8,
-        border_size      = 2,
+        border_size      = 0,
         col              = {
             active_border   = "rgb(191724)",
             inactive_border = "rgb(191724)",
@@ -26,8 +26,8 @@ hl.config({
         rounding_power   = 2,
 
         -- Change transparency of focused and unfocused windows
-        active_opacity   = 0.90,
-        inactive_opacity = 0.80,
+        -- active_opacity   = 0.90,
+        -- inactive_opacity = 0.80,
 
         shadow           = {
             enabled      = true,

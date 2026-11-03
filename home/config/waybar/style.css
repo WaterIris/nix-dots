@@ -105,11 +105,6 @@ tooltip label {
     background: @red-surface;
 }
 
-#pulseaudio {
-    color: @cyan;
-    background: @blue-surface;
-}
-
 #network {
     color: @green;
     background: @blue-surface;

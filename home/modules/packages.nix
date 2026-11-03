@@ -49,6 +49,7 @@
     hypridle            # idle management daemon for Hyprland
     hyprshot            # screenshot utility for Hyprland
     hyprlock            # screen locker for Hyprland
+    wlsunset
     waybar              # customizable status bar for Wayland
 
     # Desktop environment / misc

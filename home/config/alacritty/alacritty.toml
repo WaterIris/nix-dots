@@ -3,7 +3,7 @@ y = 6
 x = 6
 
 [font]
-normal = { family = "JetBrainsMono Nerd Font Propo", style = "Bold" }
+normal = { family = "JetBrainsMono Nerd Font Propo", style = "Normal" }
 size = 14
 
 [terminal]
