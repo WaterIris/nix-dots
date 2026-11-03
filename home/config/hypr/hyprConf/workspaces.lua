@@ -100,5 +100,5 @@ hl.bind("switch:on:Lid Switch", function()
 end, { locked = true })
 
 hl.bind("switch:off:Lid Switch", function()
-    hl.monitor({ output = LAPTOP, mode = "1920x1080@144", position = "0x0", scale = "1", disabled = false })
+    hl.monitor({ output = LAPTOP, mode = "1920x1080@144", position = "2560x0", scale = "1", disabled = false })
 end, { locked = true })
