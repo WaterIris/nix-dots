@@ -88,6 +88,7 @@
 
 
 "pulseaudio": {
+    "on-click": "qs -p ~/.config/quickshell/audiocontrol.qml",
     "format": "{icon}",
     "format-muted": "󰖁",
     "format-icons": ["", "", ""],
@@ -111,6 +112,7 @@
 },
 
 "network": {
+    "on-click": "qs -p ~/.config/quickshell/wificontrol.qml",
     "interval": 1,
     "format-wifi": "",
     "format-ethernet": "󰈀",

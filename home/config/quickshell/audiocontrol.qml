@@ -54,7 +54,7 @@ PanelWindow {
                 if (result === "OK") {
                     root.visible = true
                     card.opacity = 1
-                    card.x = 0
+                    card.x = root.cardLeft
                 } else if (result === "CLOSED") {
                     Qt.quit()
                 }
@@ -137,13 +137,16 @@ PanelWindow {
     }
 
     // ===== Card =====
+    // Opens right of the vertical waybar, with its top edge level with the
+    // volume icon. cardTop must be updated if the bar's module order changes.
+    readonly property int cardLeft: 6
+    readonly property int cardTop: 67
+
     Rectangle {
         id: card
         width: 300
         anchors.top: parent.top
-        anchors.right: parent.right
-        anchors.topMargin: 48
-        anchors.rightMargin: 20
+        anchors.topMargin: root.cardTop
         height: content.implicitHeight + 32
         radius: 16
         color: root.cBackground
@@ -151,7 +154,7 @@ PanelWindow {
         border.width: 2
 
         opacity: 0
-        x: 40
+        x: root.cardLeft - 40
         Behavior on opacity { NumberAnimation { duration: 220; easing.type: Easing.OutCubic } }
         Behavior on x { NumberAnimation { duration: 220; easing.type: Easing.OutCubic } }
 
