@@ -9,7 +9,6 @@ local menu          = "rofi -show drun"
 local browser       = "firefox"
 local powermenu     = "qs -p ~/.config/quickshell/powermenu.qml"
 local audiomenu     = "qs -p ~/.config/quickshell/audiocontrol.qml"
-local bluetoothmenu = "qs -p ~/.config/quickshell/bluetoothcontrol.qml"
 local keybindsmenu  = "qs -p ~/.config/quickshell/keybinds.qml"
 local wifimenu      = "qs -p ~/.config/quickshell/wificontrol.qml"
 
@@ -26,7 +25,6 @@ local mainMod       = "SUPER" -- Sets "Windows" key as main modifier
 -- Private binds
 hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd(powermenu), { description = "Menus: Power menu" })
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(audiomenu), { description = "Menus: Audio control" })
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(bluetoothmenu))
 hl.bind(mainMod .. " + slash", hl.dsp.exec_cmd(keybindsmenu), { description = "Menus: Show keybindings" })
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(wifimenu), { description = "Menus: Wi-Fi control" })
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }),
