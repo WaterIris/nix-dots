@@ -53,13 +53,13 @@ tooltip label {
 /* ===== Workspaces ===== */
 #workspaces button {
     border-radius: 8px;
-    margin: 3px 3px;
-    padding: 3px 12px;
-    min-width: 10px;
+    margin: 3px 6px;
+    padding: 4px 0px;
+    min-height: 10px;
     color: @subtle;
     background: @background;
     border: 1px solid @background;
-    transition: min-width 0.2s ease, color 0.2s ease, background 0.2s ease;
+    transition: min-height 0.2s ease, color 0.2s ease, background 0.2s ease;
 }
 
 #workspaces button:hover {
@@ -68,7 +68,7 @@ tooltip label {
 
 #workspaces button.active,
 #workspaces button.focused {
-    min-width: 32px;
+    min-height: 28px;
     color: @surface;
     background: @blue;
 }
@@ -113,8 +113,8 @@ window#waybar:not(.eDP-1) #workspaces button:not(.hosting-monitor).visible:not(.
 #custom-stats-icon,
 #backlight {
     border-radius: 8px;
-    margin: 3px 5px;
-    padding: 3px 8px;
+    margin: 4px 6px;
+    padding: 5px;
     color: @subtle;
     background: @background;
 }

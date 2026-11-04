@@ -1,7 +1,7 @@
 
 {
 "layer": "top",
-"position": "bottom",
+"position": "left",
 "fixed-center": true,
 "reload_style_on_change": true,
 "on-sigusr1":"toggle",
@@ -54,14 +54,15 @@
 },
 
 "clock": {
-    "format": "󱑒 {:%H:%M}", 
+    "format": "{:%H\n%M}",
+    "justify": "center",
     "tooltip-format": "{:%A, %d %B %Y}",
     "locale": "pl_PL.UTF-8",
     "timezones": [ "Europe/Warsaw" ]
 },
 
 "cpu": {
-    "format": " {usage}%",
+    "format": "",
     "interval": 2,
     "tooltip-format": "CPU usage: {usage}%\nLoad average: {load}",
     "states": {
@@ -70,7 +71,7 @@
 },
 
 "memory": {
-    "format": " {percentage}%",
+    "format": "",
     "interval": 2,
     "tooltip-format": "Used: {used} / {total} GiB\nAvailable: {avail} GiB\nSwap: {swapUsed} / {swapTotal} GiB",
     "states": {
@@ -79,7 +80,7 @@
 },
 
 "disk": {
-    "format": "󰋊 {percentage_used}%",
+    "format": "󰋊",
     "interval": 60,
     "tooltip-format": "Path: {path}\nUsed: {used} ({percentage_used}%)\nFree: {free} ({percentage_free}%)\nTotal: {total}",
     "path": "/"
@@ -87,15 +88,15 @@
 
 
 "pulseaudio": {
-    "format": "{icon} {volume}",
-    "format-muted": "󰖁 Mute",
+    "format": "{icon}",
+    "format-muted": "󰖁",
     "format-icons": ["", "", ""],
     "tooltip-format": "{desc}\nVolume: {volume}%",
     "smooth-scrolling-threshold": 1,
 },
 
 "backlight": {
-    "format": "{icon} {percent}",
+    "format": "{icon}",
     "format-icons": ["󰃜", "󰃞", "󰃟", "󰃝", "󰃠"],
     "tooltip-format": "Screen brightness: {percent}%"
 },
@@ -111,7 +112,7 @@
 
 "network": {
     "interval": 1,
-    "format-wifi": " {signalStrength}%",
+    "format-wifi": "",
     "format-ethernet": "󰈀",
     "format-disconnected": "󰖪",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{bandwidthUpBits}   {bandwidthDownBits}\nIP: {ipaddr}/{cidr}\n Freq: {frequency}GHz",
@@ -121,16 +122,17 @@
 
 "temperature": {
     "thermal-zone": 0,
-    "format": " {temperatureC}°C",
+    "format": "",
     "critical-threshold": 80,
-    "format-critical": "󰈸 {temperatureC}°C",
+    "format-critical": "󰈸",
     "tooltip-format": "Temperature: {temperatureC}°C\nCritical at 80°C",
 },
 
 "battery": {
-    "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
+    "format": "{icon}\n{capacity}",
+    "justify": "center",
+    "format-charging": "\n{capacity}",
+    "format-plugged": "\n{capacity}",
     "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "interval": 5,
     "tooltip-format": "{timeTo}\nCapacity: {capacity}%\nHealth: {health}%\nPower draw: {power}W",
