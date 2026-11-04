@@ -51,6 +51,12 @@ hl.bind(mainMod .. " + M",
     { description = "Session: Exit Hyprland" })
 -- pidof guard: a second press while locked must not start another hyprlock
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("pidof hyprlock || hyprlock"), { description = "Session: Lock screen" })
+
+-- Screenshots go to the clipboard only (no files on disk)
+hl.bind(mainMod .. " + semicolon", hl.dsp.exec_cmd("hyprshot -m output -m active --clipboard-only"),
+    { description = "Screenshot: Current monitor" })
+hl.bind(mainMod .. " + apostrophe", hl.dsp.exec_cmd("hyprshot -m region -z --clipboard-only"),
+    { description = "Screenshot: Selected region" })
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager), { description = "Apps: File manager" })
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }), { description = "Windows: Toggle floating" })
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu), { description = "Apps: App launcher" })

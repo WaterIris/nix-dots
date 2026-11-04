@@ -84,6 +84,8 @@ PanelWindow {
         "Return": "Enter",
         "Escape": "Esc",
         "slash": "/",
+        "semicolon": ";",
+        "apostrophe": "'",
         "left": "←",
         "right": "→",
         "up": "↑",
