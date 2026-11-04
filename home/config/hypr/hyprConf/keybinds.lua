@@ -4,7 +4,7 @@
 
 -- Set programs that you use
 local terminal      = "alacritty"
-local fileManager   = "dolphin"
+local fileManager   = "nemo"
 local menu          = "rofi -show drun"
 local browser       = "firefox"
 local powermenu     = "qs -p ~/.config/quickshell/powermenu.qml"
