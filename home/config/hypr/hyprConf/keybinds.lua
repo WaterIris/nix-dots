@@ -51,6 +51,8 @@ local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close(), { desc
 hl.bind(mainMod .. " + M",
     hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"),
     { description = "Session: Exit Hyprland" })
+-- pidof guard: a second press while locked must not start another hyprlock
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("pidof hyprlock || hyprlock"), { description = "Session: Lock screen" })
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager), { description = "Apps: File manager" })
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }), { description = "Windows: Toggle floating" })
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu), { description = "Apps: App launcher" })
