@@ -73,16 +73,16 @@ tooltip label {
     background: @blue;
 }
 
-/* Workspaces on the built-in screen (eDP-1) use yellow instead of blue.
+/* Workspaces on the built-in screen (eDP-1) use green instead of blue.
    Each bar gets its output name as a class: on the eDP-1 bar these are the
    workspaces this monitor hosts, on the other bar the ones it does not. */
 window#waybar.eDP-1 #workspaces button.hosting-monitor.active,
 window#waybar:not(.eDP-1) #workspaces button:not(.hosting-monitor).active {
-    background: @yellow;
+    background: @green;
 }
 
 /* Workspace shown on the other (unfocused) screen: outlined in that
-   screen's colour, blue for the external one, yellow for eDP-1. */
+   screen's colour, blue for the external one, green for eDP-1. */
 #workspaces button.visible:not(.active) {
     color: @blue;
     border-color: @blue;
@@ -90,8 +90,8 @@ window#waybar:not(.eDP-1) #workspaces button:not(.hosting-monitor).active {
 
 window#waybar.eDP-1 #workspaces button.hosting-monitor.visible:not(.active),
 window#waybar:not(.eDP-1) #workspaces button:not(.hosting-monitor).visible:not(.active) {
-    color: @yellow;
-    border-color: @yellow;
+    color: @green;
+    border-color: @green;
 }
 
 #workspaces button.empty:not(.focused):not(.active):not(.visible) {
