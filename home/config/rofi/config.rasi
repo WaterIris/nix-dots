@@ -6,6 +6,7 @@
     surface: #16161e;
     surface-alt: #292e42;
     subtle: #565f89;
+    border: #101014;
 
     red: #f7768e;
     red-surface: #2b1b26;
@@ -47,9 +48,9 @@ configuration {
 // Same panel as the quickshell menus (wificontrol.qml, keybinds.qml)
 window {
     background-color: @background;
-    border: 2px;
-    border-color: @surface-alt;
-    border-radius: 16px;
+    border: 1px;
+    border-color: @border;
+    border-radius: 6px;
     padding: 16px;
     width: 440px;
 }
@@ -70,7 +71,7 @@ inputbar {
     background-color: @surface;
     border: 1px;
     border-color: @blue;
-    border-radius: 10px;
+    border-radius: 4px;
     padding: 10px 12px;
     spacing: 10px;
     children: [textbox-search-icon, entry];
@@ -92,7 +93,7 @@ entry {
 // "No results" / errors
 message {
     background-color: @red-surface;
-    border-radius: 10px;
+    border-radius: 4px;
     padding: 8px 12px;
 }
 
@@ -112,7 +113,7 @@ listview {
 
 // List entries
 element {
-    border-radius: 10px;
+    border-radius: 4px;
     padding: 10px 12px;
     cursor: pointer;
 }
