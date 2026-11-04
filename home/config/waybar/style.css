@@ -5,6 +5,7 @@
 @define-color surface         #16161e;
 @define-color surface-alt     #292e42;
 @define-color subtle          #565f89;
+@define-color border          #101014;
 
 @define-color red             #f7768e;
 @define-color red-surface     #2b1b26;
@@ -37,11 +38,13 @@
 window#waybar {
     color: @foreground;
     background: @surface;
+    border-right: 1px solid @border;
 }
 
 /* ===== Tooltips ===== */
 tooltip {
-    border-radius: 8px;
+    border-radius: 4px;
+    border: 1px solid @border;
     color: @foreground;
     background: @background;
 }
@@ -52,7 +55,7 @@ tooltip label {
 
 /* ===== Workspaces ===== */
 #workspaces button {
-    border-radius: 8px;
+    border-radius: 4px;
     margin: 3px 6px;
     padding: 4px 0px;
     min-height: 10px;
@@ -112,7 +115,7 @@ window#waybar:not(.eDP-1) #workspaces button:not(.hosting-monitor).visible:not(.
 #custom-utils-icon,
 #custom-stats-icon,
 #backlight {
-    border-radius: 8px;
+    border-radius: 4px;
     margin: 4px 6px;
     padding: 5px;
     color: @subtle;

@@ -299,10 +299,10 @@ PanelWindow {
         anchors.top: parent.top
         anchors.topMargin: root.cardTop
         height: content.implicitHeight + 32
-        radius: 16
+        radius: 4
         color: root.cBackground
-        border.color: root.cSurfaceAlt
-        border.width: 2
+        border.color: "#101014"
+        border.width: 1
 
         opacity: 0
         x: root.cardLeft - 40
@@ -375,7 +375,7 @@ PanelWindow {
             Rectangle {
                 width: parent.width
                 height: 36
-                radius: 10
+                radius: 4
                 visible: root.wifiEnabled
                 color: root.scanning ? root.cBlueSurface : root.cSurfaceAlt
                 opacity: root.wifiEnabled ? 1 : 0.4
@@ -416,7 +416,7 @@ PanelWindow {
             Rectangle {
                 width: parent.width
                 height: 1
-                color: root.cSurfaceAlt
+                color: "#101014"
                 visible: root.wifiEnabled && root.networks.length > 0
             }
 
@@ -430,7 +430,7 @@ PanelWindow {
                 Rectangle {
                     width: parent.width
                     height: 16
-                    radius: 6
+                    radius: 4
                     color: root.cSurfaceAlt
                     opacity: 0.85
                     visible: netScroll.contentY > 2
@@ -508,7 +508,7 @@ PanelWindow {
                             id: netRow
                             width: parent.width
                             height: 44
-                            radius: 10
+                            radius: 4
                             color: netItem.modelData.connected ? root.cBlueSurface : "transparent"
 
                             Row {
@@ -588,13 +588,13 @@ PanelWindow {
                             visible: netItem.showDisconnectField
                             width: parent.width
                             height: 40
-                            radius: 10
+                            radius: 4
                             color: root.cSurfaceAlt
 
                             Rectangle {
                                 anchors.fill: parent
                                 anchors.margins: 6
-                                radius: 8
+                                radius: 4
                                 color: "transparent"
                                 border.color: root.cRed
                                 border.width: 1
@@ -619,7 +619,7 @@ PanelWindow {
                             visible: netItem.showConfirmField
                             width: parent.width
                             height: 40
-                            radius: 10
+                            radius: 4
                             color: root.cSurfaceAlt
 
                             Row {
@@ -630,7 +630,7 @@ PanelWindow {
                                 Rectangle {
                                     width: (parent.width - 8) / 2
                                     height: parent.height
-                                    radius: 8
+                                    radius: 4
                                     color: root.cBlue
                                     Text {
                                         anchors.centerIn: parent
@@ -648,7 +648,7 @@ PanelWindow {
                                 Rectangle {
                                     width: (parent.width - 8) / 2
                                     height: parent.height
-                                    radius: 8
+                                    radius: 4
                                     color: "transparent"
                                     border.color: root.cRed
                                     border.width: 1
@@ -672,7 +672,7 @@ PanelWindow {
                             visible: netItem.showPasswordField
                             width: parent.width
                             height: 76
-                            radius: 10
+                            radius: 4
                             color: root.cSurfaceAlt
 
                             Column {
@@ -683,7 +683,7 @@ PanelWindow {
                                 Rectangle {
                                     width: parent.width
                                     height: 32
-                                    radius: 8
+                                    radius: 4
                                     color: root.cBackground
                                     border.color: pwField.activeFocus ? root.cBlue : root.cSurfaceAlt
                                     border.width: 1
@@ -719,7 +719,7 @@ PanelWindow {
                                     Rectangle {
                                         width: (parent.width - 8) / 2
                                         height: 26
-                                        radius: 8
+                                        radius: 4
                                         color: root.cBlue
                                         Text {
                                             anchors.centerIn: parent
@@ -737,7 +737,7 @@ PanelWindow {
                                     Rectangle {
                                         width: (parent.width - 8) / 2
                                         height: 26
-                                        radius: 8
+                                        radius: 4
                                         color: "transparent"
                                         border.color: root.cSubtle
                                         border.width: 1
@@ -778,7 +778,7 @@ PanelWindow {
                 Rectangle {
                     width: parent.width
                     height: 16
-                    radius: 6
+                    radius: 4
                     color: root.cSurfaceAlt
                     opacity: 0.85
                     visible: netScroll.contentHeight - netScroll.height - netScroll.contentY > 2

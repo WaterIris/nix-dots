@@ -148,10 +148,10 @@ PanelWindow {
         anchors.top: parent.top
         anchors.topMargin: root.cardTop
         height: content.implicitHeight + 32
-        radius: 16
+        radius: 6
         color: root.cBackground
-        border.color: root.cSurfaceAlt
-        border.width: 2
+        border.color: "#101014"
+        border.width: 1
 
         opacity: 0
         x: root.cardLeft - 40
@@ -215,7 +215,7 @@ PanelWindow {
                 Rectangle {
                     id: muteBtn
                     width: 34; height: 34
-                    radius: 10
+                    radius: 4
                     color: root.muted ? "#2b1b26" : root.cSurfaceAlt
                     anchors.verticalCenter: parent.verticalCenter
 
@@ -235,23 +235,23 @@ PanelWindow {
                 Rectangle {
                     id: track
                     width: parent.width - muteBtn.width - parent.spacing
-                    height: 8
-                    radius: 4
+                    height: 4
+                    radius: 2
                     color: root.cSurfaceAlt
                     anchors.verticalCenter: parent.verticalCenter
 
                     Rectangle {
                         width: track.width * root.volume
                         height: parent.height
-                        radius: 4
+                        radius: 2
                         color: root.muted ? root.cSubtle : root.cBlue
                         Behavior on width { NumberAnimation { duration: 80 } }
                     }
 
                     Rectangle {
                         // Handle
-                        width: 14; height: 14
-                        radius: 7
+                        width: 12; height: 12
+                        radius: 6
                         color: root.cForeground
                         anchors.verticalCenter: parent.verticalCenter
                         x: Math.max(0, Math.min(track.width - width, track.width * root.volume - width / 2))
@@ -292,7 +292,7 @@ PanelWindow {
 
                         width: content.width
                         height: 40
-                        radius: 10
+                        radius: 4
                         color: isDefault ? root.cBlueSurface : "transparent"
 
                         Row {
@@ -331,7 +331,7 @@ PanelWindow {
             Rectangle {
                 width: parent.width
                 height: 1
-                color: root.cSurfaceAlt
+                color: "#101014"
                 visible: root.inputs.length > 0
             }
 
@@ -384,7 +384,7 @@ PanelWindow {
                 Rectangle {
                     id: micMuteBtn
                     width: 34; height: 34
-                    radius: 10
+                    radius: 4
                     color: root.sourceMuted ? "#2b1b26" : root.cSurfaceAlt
                     anchors.verticalCenter: parent.verticalCenter
 
@@ -404,23 +404,23 @@ PanelWindow {
                 Rectangle {
                     id: micTrack
                     width: parent.width - micMuteBtn.width - parent.spacing
-                    height: 8
-                    radius: 4
+                    height: 4
+                    radius: 2
                     color: root.cSurfaceAlt
                     anchors.verticalCenter: parent.verticalCenter
 
                     Rectangle {
                         width: micTrack.width * root.micVolume
                         height: parent.height
-                        radius: 4
+                        radius: 2
                         color: root.sourceMuted ? root.cSubtle : root.cBlue
                         Behavior on width { NumberAnimation { duration: 80 } }
                     }
 
                     Rectangle {
                         // Handle
-                        width: 14; height: 14
-                        radius: 7
+                        width: 12; height: 12
+                        radius: 6
                         color: root.cForeground
                         anchors.verticalCenter: parent.verticalCenter
                         x: Math.max(0, Math.min(micTrack.width - width, micTrack.width * root.micVolume - width / 2))
@@ -460,7 +460,7 @@ PanelWindow {
 
                         width: content.width
                         height: 40
-                        radius: 10
+                        radius: 4
                         color: isDefault ? root.cBlueSurface : "transparent"
 
                         Row {

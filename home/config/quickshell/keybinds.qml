@@ -161,10 +161,10 @@ PanelWindow {
         anchors.centerIn: parent
         width: Math.min(content.implicitWidth + 64, parent.width - 64)
         height: Math.min(content.implicitHeight + 64, parent.height - 64)
-        radius: 16
+        radius: 6
         color: root.cBackground
         border.width: 1
-        border.color: root.cSurfaceAlt
+        border.color: "#101014"
         clip: true
 
         opacity: 0
@@ -259,7 +259,7 @@ PanelWindow {
                                                     Rectangle {
                                                         width: keyText.implicitWidth + 12
                                                         height: keyText.implicitHeight + 6
-                                                        radius: 6
+                                                        radius: 4
                                                         color: root.cSurfaceAlt
 
                                                         Text {

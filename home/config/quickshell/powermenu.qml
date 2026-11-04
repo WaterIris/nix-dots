@@ -135,14 +135,15 @@ PanelWindow {
 
                 width: 110
                 height: 110
-                radius: 16
-                color: opt.bg
+                radius: 6
+                // Dark like the background; only the selected card lights up.
+                color: isSelected ? opt.bg : root.cBackground
                 scale: isSelected ? 1.06 : 1.0
-                border.width: isSelected ? 2 : 0
-                border.color: opt.fg
+                border.width: 1
+                border.color: "#101014"
 
                 Behavior on scale { NumberAnimation { duration: 120; easing.type: Easing.OutQuad } }
-                Behavior on border.width { NumberAnimation { duration: 120 } }
+                Behavior on color { ColorAnimation { duration: 120 } }
 
                 Column {
                     anchors.centerIn: parent
