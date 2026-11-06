@@ -30,7 +30,7 @@
 
 configuration {
     modes: "drun";
-    font: "JetBrainsMono Nerd Font Propo SemiBold 12";
+    font: "JetBrainsMono Nerd Font Propo SemiBold 14";
     fixed-num-lines: true;
     show-icons: false;
     sidebar-mode: false;
@@ -53,6 +53,9 @@ window {
     border-radius: 6px;
     padding: 16px;
     width: 440px;
+    // rofi does not count the header row when sizing the window, which left
+    // an empty strip; this fits exactly 7 lines at the 14pt font.
+    height: 480px;
 }
 
 mainbox {
