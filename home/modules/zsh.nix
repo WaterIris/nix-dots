@@ -72,9 +72,8 @@
             ls = "eza --color=never";
             ll = "eza -alh";
             tree = "eza --tree";
-            tt = "~/.config/tmux/script.sh";
-
         };
+
         history = {
             size = 10000;
             path = "${config.xdg.dataHome}/zsh/history";
