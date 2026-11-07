@@ -59,7 +59,6 @@
 
     # Development / editor
     neovim              # text editor
-    papirus-icon-theme  # icon theme
     lua-language-server # LSP server for Lua
     tree-sitter         # incremental parsing library (syntax highlighting)
     clang               # C/C++ compiler
