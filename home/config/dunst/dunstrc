@@ -7,14 +7,14 @@
     follow = mouse
 
     ### Geometry ###
-    # dynamic width from 0 to 700
-    width = (0, 300)
+    # dynamic width from 0 to 400
+    width = (0, 400)
 
     # constant width of 400
     # width = 400
 
     # The maximum height of a single notification, excluding the frame.
-    height = (0, 120)
+    height = (0, 160)
 
     gap_size = 8
     # Position the notification in the bottom right corner
@@ -151,7 +151,7 @@
 
     # Specify where to make an ellipsis in long lines.
     # Possible values are "start", "middle" and "end".
-    ellipsize = middle
+    ellipsize = end
 
     # Ignore newlines '\n' in notifications.
     ignore_newline = false
@@ -166,9 +166,8 @@
     show_indicators = true
 
     ### Icons ###
-    icon_theme = Papirus-Dark
     # Align icons left/right/off (set to 'off' to disable icons entirely)
-    icon_position = left
+    icon_position = off
 
     # Look up icons in additional directories recursively (finds more app icons)
     enable_recursive_icon_lookup = true
