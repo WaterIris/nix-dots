@@ -37,6 +37,7 @@
     alacritty           # GPU-accelerated terminal emulator
     qbittorrent         # BitTorrent client
     mpv                 # media player
+    spotify             # music streaming client
     calibre             # e-book management
     vscode-fhs          # VS Code (FHS-wrapped for extension compatibility)
     gnome-disk-utility  # disk management GUI
