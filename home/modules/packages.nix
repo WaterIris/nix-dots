@@ -58,6 +58,7 @@
     rofi                # application launcher / menu
 
     # Development / editor
+    claude-code
     neovim              # text editor
     lua-language-server # LSP server for Lua
     tree-sitter         # incremental parsing library (syntax highlighting)

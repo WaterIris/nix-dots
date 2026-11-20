@@ -26,8 +26,8 @@
             };
 
             format = lib.concatStrings [
-                "$python"
                     "$directory"
+                    "$python"
                     "$git_branch"
                     "$git_status"
                     "$cmd_duration"
