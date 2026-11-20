@@ -3,8 +3,8 @@ y = 6
 x = 6
 
 [font]
-normal = { family = "JetBrainsMono Nerd Font Propo", style = "Normal" }
-size = 14
+normal = { family = "IosevkaTerm Nerd Font", style = "Bold" }
+size = 15
 
 [terminal]
 shell = "zsh"

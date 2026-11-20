@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    # Used only for packages that should track the latest version (home/modules/packages.nix)
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,6 +25,12 @@
       # allowUnfree must be set HERE, at instantiation time — setting it inside
       # home/default.nix is too late, since `pkgs` is already built by then.
       pkgsWithUnfree = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+
+      # Same, from nixos-unstable; passed to home-manager modules as `pkgsUnstable`.
+      pkgsUnstable = import inputs.nixpkgs-unstable {
         inherit system;
         config.allowUnfree = true;
       };
@@ -47,7 +55,7 @@
       homeConfigurations = {
         "iris@laptop" = home-manager.lib.homeManagerConfiguration {
           pkgs = pkgsWithUnfree;
-          extraSpecialArgs = { inherit inputs; };
+          extraSpecialArgs = { inherit inputs pkgsUnstable; };
           modules = [
             ./home
           ];

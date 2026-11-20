@@ -1,9 +1,10 @@
 {
   pkgs,
+  pkgsUnstable,
   ...
 }:
 {
-  home.packages = with pkgs; [
+  home.packages = (with pkgs; [
     # CLI utilities
     ripgrep            # fast recursive grep alternative
     fd                  # fast, user-friendly find alternative
@@ -58,11 +59,14 @@
     rofi                # application launcher / menu
 
     # Development / editor
-    claude-code
     neovim              # text editor
     lua-language-server # LSP server for Lua
     tree-sitter         # incremental parsing library (syntax highlighting)
     clang               # C/C++ compiler
     luarocks            # Lua package manager
-  ];
+  ])
+  # Latest versions from nixos-unstable: add packages here to keep them up to date
+  ++ (with pkgsUnstable; [
+    claude-code         # Claude Code CLI
+  ]);
 }
